@@ -59,3 +59,12 @@ Spotify::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+#== Route Map
+# Generated on 23 Oct 2014 12:28
+#
+#            POST   /albums(.:format)          albums#create
+#  new_album GET    /albums/new(.:format)      albums#new
+# edit_album GET    /albums/:id/edit(.:format) albums#edit
+#      album GET    /albums/:id(.:format)      albums#show
+#            PUT    /albums/:id(.:format)      albums#update
+#            DELETE /albums/:id(.:format)      albums#destroy
