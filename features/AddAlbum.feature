@@ -8,4 +8,8 @@ Feature: Album submission
 		Given I'm on the album creation page
 		When I add a new album
 		Then I should see the newly created album
-		Then show me the page
+		
+	Scenario: Add an album without price
+		Given I'm on the album creation page
+		When I add a new album with no price
+		Then I should see errors on the page

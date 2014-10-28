@@ -12,4 +12,6 @@
 
 class Album < ActiveRecord::Base
   attr_accessible :name, :price, :release
+  
+  validates :price, :presence => true
 end

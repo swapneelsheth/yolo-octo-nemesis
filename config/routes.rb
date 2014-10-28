@@ -1,4 +1,7 @@
 Spotify::Application.routes.draw do
+  resources :playlists
+
+
   resources :albums
 
 
