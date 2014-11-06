@@ -16,4 +16,5 @@ class Album < ActiveRecord::Base
   validates :price, :presence => true
   
   has_many :songs
+  has_many :reviews, through: :songs
 end
