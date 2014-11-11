@@ -1,4 +1,6 @@
 Spotify::Application.routes.draw do
+  root :to => 'albums#index'
+  
   resources :reviews
 
 
@@ -8,7 +10,11 @@ Spotify::Application.routes.draw do
   resources :playlists
 
 
-  resources :albums
+  # resources :albums, :except => :destroy
+  # resources :albums, :except => [:destroy, :show]
+  resources :albums do
+    resources :songs
+  end
 
 
   # The priority is based upon order of creation:
@@ -69,11 +75,40 @@ Spotify::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 end
 #== Route Map
-# Generated on 23 Oct 2014 12:28
+# Generated on 11 Nov 2014 13:39
 #
-#            POST   /albums(.:format)          albums#create
-#  new_album GET    /albums/new(.:format)      albums#new
-# edit_album GET    /albums/:id/edit(.:format) albums#edit
-#      album GET    /albums/:id(.:format)      albums#show
-#            PUT    /albums/:id(.:format)      albums#update
-#            DELETE /albums/:id(.:format)      albums#destroy
+#         reviews GET    /reviews(.:format)                         reviews#index
+#                 POST   /reviews(.:format)                         reviews#create
+#      new_review GET    /reviews/new(.:format)                     reviews#new
+#     edit_review GET    /reviews/:id/edit(.:format)                reviews#edit
+#          review GET    /reviews/:id(.:format)                     reviews#show
+#                 PUT    /reviews/:id(.:format)                     reviews#update
+#                 DELETE /reviews/:id(.:format)                     reviews#destroy
+#           songs GET    /songs(.:format)                           songs#index
+#                 POST   /songs(.:format)                           songs#create
+#        new_song GET    /songs/new(.:format)                       songs#new
+#       edit_song GET    /songs/:id/edit(.:format)                  songs#edit
+#            song GET    /songs/:id(.:format)                       songs#show
+#                 PUT    /songs/:id(.:format)                       songs#update
+#                 DELETE /songs/:id(.:format)                       songs#destroy
+#       playlists GET    /playlists(.:format)                       playlists#index
+#                 POST   /playlists(.:format)                       playlists#create
+#    new_playlist GET    /playlists/new(.:format)                   playlists#new
+#   edit_playlist GET    /playlists/:id/edit(.:format)              playlists#edit
+#        playlist GET    /playlists/:id(.:format)                   playlists#show
+#                 PUT    /playlists/:id(.:format)                   playlists#update
+#                 DELETE /playlists/:id(.:format)                   playlists#destroy
+#     album_songs GET    /albums/:album_id/songs(.:format)          songs#index
+#                 POST   /albums/:album_id/songs(.:format)          songs#create
+#  new_album_song GET    /albums/:album_id/songs/new(.:format)      songs#new
+# edit_album_song GET    /albums/:album_id/songs/:id/edit(.:format) songs#edit
+#      album_song GET    /albums/:album_id/songs/:id(.:format)      songs#show
+#                 PUT    /albums/:album_id/songs/:id(.:format)      songs#update
+#                 DELETE /albums/:album_id/songs/:id(.:format)      songs#destroy
+#          albums GET    /albums(.:format)                          albums#index
+#                 POST   /albums(.:format)                          albums#create
+#       new_album GET    /albums/new(.:format)                      albums#new
+#      edit_album GET    /albums/:id/edit(.:format)                 albums#edit
+#           album GET    /albums/:id(.:format)                      albums#show
+#                 PUT    /albums/:id(.:format)                      albums#update
+#                 DELETE /albums/:id(.:format)                      albums#destroy

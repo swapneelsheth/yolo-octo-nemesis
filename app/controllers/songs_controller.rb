@@ -2,7 +2,11 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+    if (params[:album_id]) then
+      @songs = Song.where('album_id = ?', params[:album_id])
+    else
+      @songs = Song.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
