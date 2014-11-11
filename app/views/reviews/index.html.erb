@@ -4,6 +4,7 @@
   <tr>
     <th>Rating</th>
     <th>Song</th>
+    <th>Description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= review.rating %></td>
     <td><%= review.song %></td>
+    <td><%= review.description %></td>
     <td><%= link_to 'Show', review %></td>
     <td><%= link_to 'Edit', edit_review_path(review) %></td>
     <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
