@@ -14,6 +14,16 @@ class AlbumsController < ApplicationController
     @rating = Album.find(params[:id]).reviews.average(:rating)
   end
   
+  def sort
+    # @albums = Album.order("?", params[:field])
+
+    @albums = []
+    if (Album.attribute_names.include? (params[:field])) then
+      @albums = Album.order(params[:field])
+    end
+    
+    render :index
+  end
 
   # GET /albums/1
   # GET /albums/1.json
