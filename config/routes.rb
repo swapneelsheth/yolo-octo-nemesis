@@ -83,7 +83,7 @@ Spotify::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 end
 #== Route Map
-# Generated on 11 Nov 2014 13:39
+# Generated on 18 Nov 2014 20:24
 #
 #         reviews GET    /reviews(.:format)                         reviews#index
 #                 POST   /reviews(.:format)                         reviews#create
@@ -113,6 +113,8 @@ end
 #      album_song GET    /albums/:album_id/songs/:id(.:format)      songs#show
 #                 PUT    /albums/:album_id/songs/:id(.:format)      songs#update
 #                 DELETE /albums/:album_id/songs/:id(.:format)      songs#destroy
+#    rating_album GET    /albums/:id/rating(.:format)               albums#rating
+#                 GET    /albums/sort/:field(.:format)              albums#sort
 #          albums GET    /albums(.:format)                          albums#index
 #                 POST   /albums(.:format)                          albums#create
 #       new_album GET    /albums/new(.:format)                      albums#new
