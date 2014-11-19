@@ -15,6 +15,6 @@ class Song < ActiveRecord::Base
   has_many :reviews
   
   # validates :album_id, presence: true
-  validates :album, presence: {message: "doesn't exist"}
+  # validates :album, presence: {message: "doesn't exist"}
   attr_accessible :length, :title, :album_id
 end

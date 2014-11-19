@@ -14,6 +14,10 @@ Spotify::Application.routes.draw do
   # resources :albums, :except => [:destroy, :show]
   resources :albums do
     resources :songs
+    
+    member do
+      get 'rating'
+    end
   end
 
 

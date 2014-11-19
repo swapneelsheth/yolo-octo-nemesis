@@ -9,6 +9,11 @@ class AlbumsController < ApplicationController
       format.json { render json: @albums }
     end
   end
+  
+  def rating
+    @rating = Album.find(params[:id]).reviews.average(:rating)
+  end
+  
 
   # GET /albums/1
   # GET /albums/1.json

@@ -15,8 +15,8 @@ class Album < ActiveRecord::Base
   
   validates :price, :presence => true
   # validates :name, :length => {:minimum => 2}
-  validates :name, length: {maximum: 5}
-  validates :price, numericality: {greater_than: 3, even:true}
+  # validates :name, length: {maximum: 5}
+  # validates :price, numericality: {greater_than: 3, even:true}
   
   has_many :songs
   has_many :reviews, through: :songs
