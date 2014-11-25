@@ -15,4 +15,7 @@ class PlaylistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  
+  album = Album.new(name: "Foo")
+  assert album.save, "album has the same name"
 end
