@@ -91,6 +91,7 @@ GEM
     multi_test (0.1.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
+    pg (0.15.1)
     polyglot (0.3.5)
     rack (1.4.5)
     rack-cache (1.2)
@@ -162,6 +163,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails
+  pg
   rails (= 3.2.19)
   sass-rails (~> 3.2.3)
   sqlite3
