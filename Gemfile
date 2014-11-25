@@ -20,6 +20,7 @@ group :test, :development do
   gem 'launchy'
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'simplecov', :require => false
 end
 
 group :production do
