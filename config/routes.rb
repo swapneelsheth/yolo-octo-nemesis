@@ -1,4 +1,7 @@
 Spotify::Application.routes.draw do
+  resources :users
+
+
   root :to => 'albums#index'
   
   resources :reviews
