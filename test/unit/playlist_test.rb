@@ -16,6 +16,10 @@ class PlaylistTest < ActiveSupport::TestCase
   #   assert true
   # end
   
-  album = Album.new(name: "Foo")
-  assert album.save, "album has the same name"
+  test "should not allow paylist with the same name" do
+    
+    playlist = Playlist.new(title: "Christmas")
+    assert !playlist.save, "Playlist has the same name"
+  end
+  
 end
